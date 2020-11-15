@@ -1,3 +1,5 @@
+
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -6,8 +8,17 @@ spring:
     password: 123456
     hikari:
       max-lifetime: 86400
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+    freemarker:
+      cache: false
 
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.sk.yiqing.model
+server:
+  port: 8083
